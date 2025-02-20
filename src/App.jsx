@@ -1,11 +1,12 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./assets/css/styles.css";
 import "./assets/js/scripts";
 import emailjs from "emailjs-com";
 
 function App() {
   const form = useRef();
-
+  const [isFocused, setIsFocused] = useState(false);
+  const [date, setDate] = useState("");
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -36,7 +37,11 @@ function App() {
       >
         <div className="container">
           <a className="navbar-brand" href="/">
-            <img src="/img/Amazing-removebg-preview.png" alt="Logo" />
+            <img
+              loading="lazy"
+              src="/img/Amazing-removebg-preview.png"
+              alt="Logo"
+            />
           </a>
           <button
             className="navbar-toggler"
@@ -77,7 +82,7 @@ function App() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#contact">
-                  Liên hệ
+                  Đăng ký
                 </a>
               </li>
             </ul>
@@ -90,7 +95,7 @@ function App() {
             Giỏi Tiếng Anh – Tự Tin Giao Tiếp!
           </div>
           <div className="masthead-heading text-uppercase">Dạy tận tâm</div>
-          <a className="btn btn-primary btn-xl text-uppercase" href="#services">
+          <a className="btn btn-primary btn-xl text-uppercase" href="#contact">
             Đăng Ký Ngay{" "}
             <span
               style={{ fontSize: "18px" }}
@@ -111,7 +116,7 @@ function App() {
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-language fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-volume-up fa-stack-1x fa-inverse"></i>
               </span>
               <h4 className="my-3">Phát Âm</h4>
               <p className="text-muted">
@@ -149,19 +154,190 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="close-modal" data-bs-dismiss="modal">
-              <img src="assets/img/close-icon.svg" alt="Close modal" />
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
             </div>
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
+                    <h2 className="text-uppercase">Pre-Kids</h2>
                     <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
+                      Tiếng Anh cho trẻ từ 4 - 5 tuổi.
                     </p>
                     <img
+                      loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="assets/img/portfolio/1.jpg"
+                      src="/img/pre-kids.webp"
+                      alt="..."
+                      width={"600px"}
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Threads
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Illustration
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      Khóa học khác
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal7"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Luyện âm Anh Mỹ cơ bản</h2>
+                    <p className="item-intro text-muted">Huấn luyện phát âm.</p>
+                    <img
+                      loading="lazy"
+                      className="img-fluid d-block mx-auto"
+                      src="/img/pronounce.webp"
+                      alt="..."
+                      width={"600px"}
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Threads
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Illustration
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      Khóa học khác
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal8"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Luyện âm Anh Mỹ nâng cao</h2>
+                    <p className="item-intro text-muted">Phát triển kỹ năng.</p>
+                    <img
+                      loading="lazy"
+                      className="img-fluid d-block mx-auto"
+                      src="/img/pronounce-advanced.webp"
+                      alt="..."
+                      width={"600px"}
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Threads
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Illustration
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      Khóa học khác
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal1"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Pre-Kids</h2>
+                    <p className="item-intro text-muted">
+                      Tiếng Anh cho trẻ từ 4-5 tuổi.
+                    </p>
+                    <img
+                      loading="lazy"
+                      className="img-fluid d-block mx-auto"
+                      src="/img/pre-kids.webp"
                       alt="..."
                     />
                     <p>
@@ -186,8 +362,7 @@ function App() {
                       data-bs-dismiss="modal"
                       type="button"
                     >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
+                      Khóa học khác
                     </button>
                   </div>
                 </div>
@@ -206,20 +381,22 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="close-modal" data-bs-dismiss="modal">
-              <img src="assets/img/close-icon.svg" alt="Close modal" />
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
             </div>
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
+                    <h2 className="text-uppercase">Kids</h2>
                     <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
+                      Tiếng Anh cho trẻ từ 6 - 11 tuổi.
                     </p>
                     <img
+                      loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="assets/img/portfolio/2.jpg"
+                      src="/img/kids.webp"
                       alt="..."
+                      width={"600px"}
                     />
                     <p>
                       Use this area to describe your project. Lorem ipsum dolor
@@ -243,8 +420,7 @@ function App() {
                       data-bs-dismiss="modal"
                       type="button"
                     >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
+                      Khóa học khác
                     </button>
                   </div>
                 </div>
@@ -263,20 +439,20 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="close-modal" data-bs-dismiss="modal">
-              <img src="assets/img/close-icon.svg" alt="Close modal" />
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
             </div>
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
+                    <h2 className="text-uppercase">Teens</h2>
+                    <p className="item-intro text-muted">12- 14 tuổi.</p>
                     <img
+                      loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="assets/img/portfolio/3.jpg"
+                      src="/img/teens.webp"
                       alt="..."
+                      width={"600px"}
                     />
                     <p>
                       Use this area to describe your project. Lorem ipsum dolor
@@ -300,8 +476,7 @@ function App() {
                       data-bs-dismiss="modal"
                       type="button"
                     >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
+                      Khóa học khác
                     </button>
                   </div>
                 </div>
@@ -320,20 +495,20 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="close-modal" data-bs-dismiss="modal">
-              <img src="assets/img/close-icon.svg" alt="Close modal" />
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
             </div>
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
+                    <h2 className="text-uppercase">Giao tiếp tự tin</h2>
+                    <p className="item-intro text-muted">12 - 22 tuổi.</p>
                     <img
+                      loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="assets/img/portfolio/4.jpg"
+                      src="/img/communicate-confident.webp"
                       alt="..."
+                      width={"600px"}
                     />
                     <p>
                       Use this area to describe your project. Lorem ipsum dolor
@@ -357,8 +532,7 @@ function App() {
                       data-bs-dismiss="modal"
                       type="button"
                     >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
+                      Khóa học khác
                     </button>
                   </div>
                 </div>
@@ -377,20 +551,20 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="close-modal" data-bs-dismiss="modal">
-              <img src="assets/img/close-icon.svg" alt="Close modal" />
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
             </div>
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
+                    <h2 className="text-uppercase">Giao tiếp thông thường</h2>
+                    <p className="item-intro text-muted">23 - 30 tuổi.</p>
                     <img
+                      loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="assets/img/portfolio/5.jpg"
+                      src="/img/communication.webp"
                       alt="..."
+                      width={"600px"}
                     />
                     <p>
                       Use this area to describe your project. Lorem ipsum dolor
@@ -414,8 +588,7 @@ function App() {
                       data-bs-dismiss="modal"
                       type="button"
                     >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
+                      Khóa học khác
                     </button>
                   </div>
                 </div>
@@ -434,20 +607,20 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="close-modal" data-bs-dismiss="modal">
-              <img src="assets/img/close-icon.svg" alt="Close modal" />
+              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
             </div>
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
+                    <h2 className="text-uppercase">Luyện phỏng vấn visa Mỹ</h2>
+                    <p className="item-intro text-muted">Huấn luyện thực tế.</p>
                     <img
+                      loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="assets/img/portfolio/6.jpg"
+                      src="/img/interview.webp"
                       alt="..."
+                      width={"600px"}
                     />
                     <p>
                       Use this area to describe your project. Lorem ipsum dolor
@@ -471,8 +644,7 @@ function App() {
                       data-bs-dismiss="modal"
                       type="button"
                     >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
+                      Khóa học khác
                     </button>
                   </div>
                 </div>
@@ -503,8 +675,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/pre-kids.jpg"
+                    src="/img/pre-kids.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -512,7 +685,7 @@ function App() {
                 <div className="portfolio-caption">
                   <div className="portfolio-caption-heading">Pre-Kids</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Tiếng Anh cho trẻ từ 4-5 tuổi
+                    Tiếng Anh cho trẻ từ 4 - 5 tuổi
                   </div>
                 </div>
               </div>
@@ -530,8 +703,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/kids.jpg"
+                    src="/img/kids.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -539,7 +713,7 @@ function App() {
                 <div className="portfolio-caption">
                   <div className="portfolio-caption-heading">Kids</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Tiếng Anh cho trẻ từ 6 -11 tuổi
+                    Tiếng Anh cho trẻ từ 6 - 11 tuổi
                   </div>
                 </div>
               </div>
@@ -557,8 +731,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/teens.jpg"
+                    src="/img/teens.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -576,7 +751,7 @@ function App() {
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal1"
+                  href="#portfolioModal4"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -584,8 +759,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/communicate-confident.jpg"
+                    src="/img/communicate-confident.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -605,7 +781,7 @@ function App() {
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal2"
+                  href="#portfolioModal5"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -613,8 +789,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/communication.jpg"
+                    src="/img/communication.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -634,7 +811,7 @@ function App() {
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal3"
+                  href="#portfolioModal6"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -642,8 +819,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/teens.jpg"
+                    src="/img/interview.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -663,7 +841,7 @@ function App() {
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal4"
+                  href="#portfolioModal7"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -671,8 +849,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/pronounce.jpg"
+                    src="/img/pronounce.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -692,7 +871,7 @@ function App() {
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal5"
+                  href="#portfolioModal8"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -700,8 +879,9 @@ function App() {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     className="img-fluid"
-                    src="/img/pronounce-advanced.jpg"
+                    src="/img/pronounce-advanced.webp"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -731,6 +911,7 @@ function App() {
             <li>
               <div className="timeline-image">
                 <img
+                  loading="lazy"
                   className="rounded-circle img-fluid"
                   src="/img/about/1.jpg"
                   alt="..."
@@ -754,6 +935,7 @@ function App() {
             <li className="timeline-inverted">
               <div className="timeline-image">
                 <img
+                  loading="lazy"
                   className="rounded-circle img-fluid"
                   src="/img/about/2.jpg"
                   alt="..."
@@ -777,6 +959,7 @@ function App() {
             <li>
               <div className="timeline-image">
                 <img
+                  loading="lazy"
                   className="rounded-circle img-fluid"
                   src="/img/about/3.jpg"
                   alt="..."
@@ -800,6 +983,7 @@ function App() {
             <li className="timeline-inverted">
               <div className="timeline-image">
                 <img
+                  loading="lazy"
                   className="rounded-circle img-fluid"
                   src="/img/about/4.jpg"
                   alt="..."
@@ -849,6 +1033,7 @@ function App() {
             <div className="col-lg-4">
               <div className="team-member">
                 <img
+                  loading="lazy"
                   className="mx-auto rounded-circle"
                   src="/img/avatar_amy.jpg"
                   alt="member"
@@ -868,6 +1053,7 @@ function App() {
             <div className="col-lg-4">
               <div className="team-member">
                 <img
+                  loading="lazy"
                   className="mx-auto rounded-circle"
                   src="/img/avatar_dua_xe_oto.jpg"
                   alt="member"
@@ -887,6 +1073,7 @@ function App() {
             <div className="col-lg-4">
               <div className="team-member">
                 <img
+                  loading="lazy"
                   className="mx-auto rounded-circle"
                   src="/img/avatar_amy_2.jpg"
                   alt="member"
@@ -933,16 +1120,33 @@ function App() {
                     name="full_name"
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group" style={{ position: "relative" }}>
                   <input
                     className="form-control"
                     id="date"
                     type="date"
-                    placeholder="Ngày sinh *"
-                    data-sb-validations="required"
-                    required
                     name="birthday"
+                    required
+                    value={date}
+                    onFocus={() => setIsFocused(true)}
+                    onBlur={() => setIsFocused(date !== "")}
+                    onChange={(e) => setDate(e.target.value)}
+                    style={{ padding: "20px" }}
                   />
+                  <label
+                    htmlFor="date"
+                    style={{
+                      position: "absolute",
+                      left: "20px",
+                      bottom: isFocused ? "40px" : "20px",
+                      fontSize: isFocused ? "12px" : "16px",
+                      color: isFocused ? "transparent" : "#666",
+                      transition: "all 0.2s ease-in-out",
+                    }}
+                    className="d-block d-md-none"
+                  >
+                    Ngày sinh
+                  </label>
                 </div>
                 <div className="form-group">
                   <input
@@ -1022,6 +1226,7 @@ function App() {
                     id="full_name_parent"
                     type="text"
                     placeholder="Họ tên phụ huynh *"
+                    name="full_name_parent"
                     data-sb-validations="required"
                     required
                   />
@@ -1035,11 +1240,11 @@ function App() {
                     required
                   >
                     <option value="">Mối quan hệ</option>
-                    <option value="father">Ba</option>
-                    <option value="mother">Mẹ</option>
-                    <option value="sublings">Anh chị em</option>
-                    <option value="relative">Bà con</option>
-                    <option value="guardian">Người giám hộ</option>
+                    <option value="Father">Cha/Bố</option>
+                    <option value="Mother">Mẹ</option>
+                    <option value="Brothers and sisters">Anh chị em</option>
+                    <option value="Relative">Bà con</option>
+                    <option value="Guardian">Người giám hộ</option>
                   </select>
                 </div>
                 <div className="form-group">
@@ -1081,7 +1286,7 @@ function App() {
                 className="btn btn-primary btn-xl text-uppercase"
                 type="submit"
               >
-                Gửi Đơn{" "}
+                Đăng ký{" "}
                 <i
                   className="fas fa-paper-plane"
                   style={{ paddingLeft: "5px" }}
