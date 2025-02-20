@@ -57,7 +57,7 @@ function App() {
             <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
               <li className="nav-item">
                 <a className="nav-link" href="#services">
-                  Services
+                  Kỹ năng
                 </a>
               </li>
               <li className="nav-item">
@@ -102,22 +102,20 @@ function App() {
       <section className="page-section" id="services">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Services</h2>
+            <h2 className="section-heading text-uppercase">Kỹ năng</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Trang bị kỹ năng vững chắc.
             </h3>
           </div>
           <div className="row text-center">
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-language fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">E-Commerce</h4>
+              <h4 className="my-3">Phát Âm</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Cải thiện phát âm chuẩn, tự tin giao tiếp như người bản xứ.
               </p>
             </div>
             <div className="col-md-4">
@@ -125,24 +123,18 @@ function App() {
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
                 <i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">Responsive Design</h4>
+              <h4 className="my-3">Phỏng Vấn</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Chiến lược phỏng vấn hiệu quả, giúp bạn thành công.
               </p>
             </div>
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-lock fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-globe fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">Web Security</h4>
-              <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
-              </p>
+              <h4 className="my-3">Giao Tiếp</h4>
+              <p className="text-muted">Tự tin nói chuyện, kết nối dễ dàng.</p>
             </div>
           </div>
         </div>
@@ -579,12 +571,12 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+            <div className="col-lg-4 col-sm-6 mb-4">
               <div className="portfolio-item">
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal4"
+                  href="#portfolioModal1"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -608,12 +600,12 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+            <div className="col-lg-4 col-sm-6 mb-4">
               <div className="portfolio-item">
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal5"
+                  href="#portfolioModal2"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -637,12 +629,12 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-sm-6">
+            <div className="col-lg-4 col-sm-6 mb-4">
               <div className="portfolio-item">
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal6"
+                  href="#portfolioModal3"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -651,7 +643,7 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/6.jpg"
+                    src="/img/teens.jpg"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -666,12 +658,12 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-sm-6">
+            <div className="col-lg-4 col-sm-6 mb-4 mb-lg-0">
               <div className="portfolio-item">
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal6"
+                  href="#portfolioModal4"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -680,7 +672,7 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/6.jpg"
+                    src="/img/pronounce.jpg"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -695,12 +687,12 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-sm-6">
+            <div className="col-lg-4 col-sm-6 mb-4 mb-sm-0">
               <div className="portfolio-item">
                 <a
                   className="portfolio-link"
                   data-bs-toggle="modal"
-                  href="#portfolioModal6"
+                  href="#portfolioModal5"
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
@@ -709,7 +701,7 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/6.jpg"
+                    src="/img/pronounce-advanced.jpg"
                     alt="..."
                     style={{ height: "310px", objectFit: "cover" }}
                   />
@@ -719,7 +711,7 @@ function App() {
                     Luyện âm Anh Mỹ nâng cao
                   </div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Khóa học chuyên sâu
+                    Phát triển kỹ năng
                   </div>
                 </div>
               </div>
@@ -730,9 +722,9 @@ function App() {
       <section className="page-section" id="about">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">About</h2>
+            <h2 className="section-heading text-uppercase">Giới thiệu</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Khám phá sứ mệnh và giá trị cốt lõi của chúng tôi.
             </h3>
           </div>
           <ul className="timeline">
@@ -918,7 +910,7 @@ function App() {
         <div className="container">
           <div className="text-center">
             <h2 className="section-heading text-uppercase">Đăng ký</h2>
-            <h3 className="section-subheading text-muted">
+            <h3 className="section-subheading" style={{ color: "#fff" }}>
               Bắt đầu hành trình của bạn ngay hôm nay!
             </h3>
           </div>
@@ -1089,7 +1081,11 @@ function App() {
                 className="btn btn-primary btn-xl text-uppercase"
                 type="submit"
               >
-                Gửi Đơn
+                Gửi Đơn{" "}
+                <i
+                  className="fas fa-paper-plane"
+                  style={{ paddingLeft: "5px" }}
+                ></i>
               </button>
             </div>
           </form>
@@ -1099,7 +1095,7 @@ function App() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-4 text-lg-start">
-              Copyright &copy; Amazing Education 2025
+              {/* Copyright &copy; Amazing Education 2025 */}
             </div>
             <div className="col-lg-4 my-3 my-lg-0">
               <a
@@ -1113,10 +1109,10 @@ function App() {
             </div>
             <div className="col-lg-4 text-lg-end">
               <a className="link-dark text-decoration-none me-3" href="#!">
-                Privacy Policy
+                {/* Privacy Policy */}
               </a>
               <a className="link-dark text-decoration-none" href="#!">
-                Terms of Use
+                {/* Terms of Use */}
               </a>
             </div>
           </div>
