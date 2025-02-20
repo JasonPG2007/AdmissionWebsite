@@ -1,7 +1,33 @@
+import { useRef } from "react";
 import "./assets/css/styles.css";
 import "./assets/js/scripts";
+import emailjs from "emailjs-com";
 
 function App() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_jrgaq57",
+        "template_ovkltxr",
+        form.current,
+        "36B1PoPlACVPxMI_K"
+      )
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          alert("Email sent successfully!");
+        },
+        (error) => {
+          console.log("Error:", error.text);
+          alert("Failed to send email.");
+        }
+      );
+  };
+
   return (
     <>
       <nav
@@ -9,7 +35,7 @@ function App() {
         id="mainNav"
       >
         <div className="container">
-          <a className="navbar-brand" href="#page-top">
+          <a className="navbar-brand" href="/">
             <img src="/img/Amazing-removebg-preview.png" alt="Logo" />
           </a>
           <button
@@ -36,22 +62,22 @@ function App() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#portfolio">
-                  Portfolio
+                  Khóa học
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#about">
-                  About
+                  Giới thiệu
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#team">
-                  Team
+                  Đội ngũ
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#contact">
-                  Contact
+                  Liên hệ
                 </a>
               </li>
             </ul>
@@ -121,12 +147,354 @@ function App() {
           </div>
         </div>
       </section>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal1"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Project Name</h2>
+                    <p className="item-intro text-muted">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <img
+                      className="img-fluid d-block mx-auto"
+                      src="assets/img/portfolio/1.jpg"
+                      alt="..."
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Threads
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Illustration
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i className="fas fa-xmark me-1"></i>
+                      Close Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal2"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Project Name</h2>
+                    <p className="item-intro text-muted">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <img
+                      className="img-fluid d-block mx-auto"
+                      src="assets/img/portfolio/2.jpg"
+                      alt="..."
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Explore
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Graphic Design
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i className="fas fa-xmark me-1"></i>
+                      Close Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal3"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Project Name</h2>
+                    <p className="item-intro text-muted">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <img
+                      className="img-fluid d-block mx-auto"
+                      src="assets/img/portfolio/3.jpg"
+                      alt="..."
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Finish
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Identity
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i className="fas fa-xmark me-1"></i>
+                      Close Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal4"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Project Name</h2>
+                    <p className="item-intro text-muted">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <img
+                      className="img-fluid d-block mx-auto"
+                      src="assets/img/portfolio/4.jpg"
+                      alt="..."
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Lines
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Branding
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i className="fas fa-xmark me-1"></i>
+                      Close Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal5"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Project Name</h2>
+                    <p className="item-intro text-muted">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <img
+                      className="img-fluid d-block mx-auto"
+                      src="assets/img/portfolio/5.jpg"
+                      alt="..."
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Southwest
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Website Design
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i className="fas fa-xmark me-1"></i>
+                      Close Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="portfolio-modal modal fade"
+        id="portfolioModal6"
+        tabIndex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="close-modal" data-bs-dismiss="modal">
+              <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="modal-body">
+                    <h2 className="text-uppercase">Project Name</h2>
+                    <p className="item-intro text-muted">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <img
+                      className="img-fluid d-block mx-auto"
+                      src="assets/img/portfolio/6.jpg"
+                      alt="..."
+                    />
+                    <p>
+                      Use this area to describe your project. Lorem ipsum dolor
+                      sit amet, consectetur adipisicing elit. Est blanditiis
+                      dolorem culpa incidunt minus dignissimos deserunt repellat
+                      aperiam quasi sunt officia expedita beatae cupiditate,
+                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                    </p>
+                    <ul className="list-inline">
+                      <li>
+                        <strong>Client:</strong>
+                        Window
+                      </li>
+                      <li>
+                        <strong>Category:</strong>
+                        Photography
+                      </li>
+                    </ul>
+                    <button
+                      className="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i className="fas fa-xmark me-1"></i>
+                      Close Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section className="page-section bg-light" id="portfolio">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Portfolio</h2>
+            <h2 className="section-heading text-uppercase">Khóa học</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Tham gia và trải nghiệm ngay.
             </h3>
           </div>
           <div className="row">
@@ -144,14 +512,15 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/1.jpg"
+                    src="/img/pre-kids.jpg"
                     alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Threads</div>
+                  <div className="portfolio-caption-heading">Pre-Kids</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Illustration
+                    Tiếng Anh cho trẻ từ 4-5 tuổi
                   </div>
                 </div>
               </div>
@@ -170,14 +539,15 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/2.jpg"
+                    src="/img/kids.jpg"
                     alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Explore</div>
+                  <div className="portfolio-caption-heading">Kids</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Graphic Design
+                    Tiếng Anh cho trẻ từ 6 -11 tuổi
                   </div>
                 </div>
               </div>
@@ -196,14 +566,15 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/3.jpg"
+                    src="/img/teens.jpg"
                     alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Finish</div>
+                  <div className="portfolio-caption-heading">Teens</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Identity
+                    12- 14 tuổi
                   </div>
                 </div>
               </div>
@@ -222,14 +593,17 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/4.jpg"
+                    src="/img/communicate-confident.jpg"
                     alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Lines</div>
+                  <div className="portfolio-caption-heading">
+                    Giao tiếp tự tin
+                  </div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Branding
+                    12 - 22 tuổi
                   </div>
                 </div>
               </div>
@@ -248,14 +622,17 @@ function App() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="/img/portfolio/5.jpg"
+                    src="/img/communication.jpg"
                     alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Southwest</div>
+                  <div className="portfolio-caption-heading">
+                    Giao tiếp thông thường
+                  </div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Website Design
+                    23 - 30 tuổi
                   </div>
                 </div>
               </div>
@@ -276,12 +653,73 @@ function App() {
                     className="img-fluid"
                     src="/img/portfolio/6.jpg"
                     alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Window</div>
+                  <div className="portfolio-caption-heading">
+                    Luyện phỏng vấn visa Mỹ
+                  </div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Photography
+                    Huấn luyện thực tế
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6">
+              <div className="portfolio-item">
+                <a
+                  className="portfolio-link"
+                  data-bs-toggle="modal"
+                  href="#portfolioModal6"
+                >
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img
+                    className="img-fluid"
+                    src="/img/portfolio/6.jpg"
+                    alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
+                  />
+                </a>
+                <div className="portfolio-caption">
+                  <div className="portfolio-caption-heading">
+                    Luyện âm Anh Mỹ cơ bản
+                  </div>
+                  <div className="portfolio-caption-subheading text-muted">
+                    Huấn luyện phát âm
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6">
+              <div className="portfolio-item">
+                <a
+                  className="portfolio-link"
+                  data-bs-toggle="modal"
+                  href="#portfolioModal6"
+                >
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img
+                    className="img-fluid"
+                    src="/img/portfolio/6.jpg"
+                    alt="..."
+                    style={{ height: "310px", objectFit: "cover" }}
+                  />
+                </a>
+                <div className="portfolio-caption">
+                  <div className="portfolio-caption-heading">
+                    Luyện âm Anh Mỹ nâng cao
+                  </div>
+                  <div className="portfolio-caption-subheading text-muted">
+                    Khóa học chuyên sâu
                   </div>
                 </div>
               </div>
@@ -407,9 +845,12 @@ function App() {
       <section className="page-section bg-light" id="team">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+            <h2 className="section-heading text-uppercase">
+              Đội ngũ tuyệt vời
+            </h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Những chuyên gia tận tâm, giàu kinh nghiệm, luôn sẵn sàng đồng
+              hành cùng bạn.
             </h3>
           </div>
           <div className="row">
@@ -417,165 +858,76 @@ function App() {
               <div className="team-member">
                 <img
                   className="mx-auto rounded-circle"
-                  src="/img/team/1.jpg"
-                  alt="..."
+                  src="/img/avatar_amy.jpg"
+                  alt="member"
+                  style={{ objectFit: "cover" }}
                 />
-                <h4>Parveen Anand</h4>
-                <p className="text-muted">Lead Designer</p>
+                <h4>Amy Nguyen</h4>
+                <p className="text-muted">CEO</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
-                  aria-label="Parveen Anand Twitter Profile"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="https://www.facebook.com/amy.nguyen.vietnam"
                   aria-label="Parveen Anand Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a
-                  className="btn btn-dark btn-social mx-2"
-                  href="#!"
-                  aria-label="Parveen Anand LinkedIn Profile"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="team-member">
                 <img
                   className="mx-auto rounded-circle"
-                  src="/img/team/2.jpg"
-                  alt="..."
+                  src="/img/avatar_dua_xe_oto.jpg"
+                  alt="member"
+                  style={{ objectFit: "cover" }}
                 />
-                <h4>Diana Petersen</h4>
-                <p className="text-muted">Lead Marketer</p>
+                <h4>Nguyen Quoc Bao An</h4>
+                <p className="text-muted">Kỹ sư phần mềm</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
-                  aria-label="Diana Petersen Twitter Profile"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="https://www.facebook.com/nguyen.quoc.bao.an.231948"
                   aria-label="Diana Petersen Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a
-                  className="btn btn-dark btn-social mx-2"
-                  href="#!"
-                  aria-label="Diana Petersen LinkedIn Profile"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="team-member">
                 <img
                   className="mx-auto rounded-circle"
-                  src="/img/team/3.jpg"
-                  alt="..."
+                  src="/img/avatar_amy_2.jpg"
+                  alt="member"
+                  style={{ objectFit: "cover" }}
                 />
-                <h4>Larry Parker</h4>
-                <p className="text-muted">Lead Developer</p>
+                <h4>Amy Nguyen</h4>
+                <p className="text-muted">Giáo viên</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
-                  aria-label="Larry Parker Twitter Profile"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="https://www.facebook.com/amy.nguyen.vietnam"
                   aria-label="Larry Parker Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a
-                  className="btn btn-dark btn-social mx-2"
-                  href="#!"
-                  aria-label="Larry Parker LinkedIn Profile"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
               </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-8 mx-auto text-center">
-              <p className="large text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
-                eaque, laboriosam veritatis, quos non quis ad perspiciatis,
-                totam corporis ea, alias ut unde.
-              </p>
             </div>
           </div>
         </div>
       </section>
-      <div className="py-5">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
-                <img
-                  className="img-fluid img-brand d-block mx-auto"
-                  src="/img/logos/microsoft.svg"
-                  alt="..."
-                  aria-label="Microsoft Logo"
-                />
-              </a>
-            </div>
-            <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
-                <img
-                  className="img-fluid img-brand d-block mx-auto"
-                  src="/img/logos/google.svg"
-                  alt="..."
-                  aria-label="Google Logo"
-                />
-              </a>
-            </div>
-            <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
-                <img
-                  className="img-fluid img-brand d-block mx-auto"
-                  src="/img/logos/facebook.svg"
-                  alt="..."
-                  aria-label="Facebook Logo"
-                />
-              </a>
-            </div>
-            <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
-                <img
-                  className="img-fluid img-brand d-block mx-auto"
-                  src="/img/logos/ibm.svg"
-                  alt="..."
-                  aria-label="IBM Logo"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
       <section className="page-section" id="contact">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Contact Us</h2>
+            <h2 className="section-heading text-uppercase">Đăng ký</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Bắt đầu hành trình của bạn ngay hôm nay!
             </h3>
           </div>
-          <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+          <form
+            ref={form}
+            id="contactForm"
+            data-sb-form-api-token="API_TOKEN"
+            onSubmit={sendEmail}
+          >
             <div className="row align-items-stretch mb-5">
               <div className="col-md-6">
                 <div className="form-group">
@@ -583,92 +935,161 @@ function App() {
                     className="form-control"
                     id="name"
                     type="text"
-                    placeholder="Your Name *"
+                    placeholder="Họ tên học viên *"
                     data-sb-validations="required"
+                    required
+                    name="full_name"
                   />
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="name:required"
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="date"
+                    type="date"
+                    placeholder="Ngày sinh *"
+                    data-sb-validations="required"
+                    required
+                    name="birthday"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="name"
+                    type="text"
+                    placeholder="Quận/Huyện *"
+                    data-sb-validations="required"
+                    name="district"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="email"
+                    type="text"
+                    placeholder="Thành phố *"
+                    data-sb-validations="required,email"
+                    name="city"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="address"
+                    type="text"
+                    placeholder="Địa chỉ"
+                    data-sb-validations="required"
+                    name="address"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="phone"
+                    type="tel"
+                    placeholder="Trường học (Nhập 'Đã tốt nghiệp' nếu không còn đi học') *"
+                    data-sb-validations="required"
+                    name="school"
+                    required
+                  />
+                </div>
+                <div className="form-group mb-md-0">
+                  <select
+                    name="programme"
+                    id=""
+                    className="form-control"
+                    style={{ padding: "20px" }}
+                    required
                   >
-                    A name is required.
-                  </div>
+                    <option value="">Khóa học</option>
+                    <option value="Pre-kids">Pre-Kids</option>
+                    <option value="Kids">Kids</option>
+                    <option value="Teens">Teens</option>
+                    <option value="Giao tiếp tự tin">Giao tiếp tự tin</option>
+                    <option value="Giao tiếp thông thường">
+                      Giao tiếp thông thường
+                    </option>
+                    <option value="Luyện phỏng vấn visa">
+                      Luyện phỏng vấn visa
+                    </option>
+                    <option value="Luyện âm Anh Mỹ cơ bản">
+                      Luyện âm Anh Mỹ cơ bản
+                    </option>
+                    <option value="Luyện âm Anh Mỹ nâng cao">
+                      Luyện âm Anh Mỹ nâng cao
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="full_name_parent"
+                    type="text"
+                    placeholder="Họ tên phụ huynh *"
+                    data-sb-validations="required"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <select
+                    name="relationship"
+                    id=""
+                    className="form-control"
+                    style={{ padding: "20px" }}
+                    required
+                  >
+                    <option value="">Mối quan hệ</option>
+                    <option value="father">Ba</option>
+                    <option value="mother">Mẹ</option>
+                    <option value="sublings">Anh chị em</option>
+                    <option value="relative">Bà con</option>
+                    <option value="guardian">Người giám hộ</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="phone_parent"
+                    type="number"
+                    name="phone"
+                    placeholder="SĐT phụ huynh *"
+                    data-sb-validations="required,email"
+                  />
                 </div>
                 <div className="form-group">
                   <input
                     className="form-control"
                     id="email"
                     type="email"
-                    placeholder="Your Email *"
-                    data-sb-validations="required,email"
+                    placeholder="Email phụ huynh *"
+                    name="email_parent"
+                    required
+                    data-sb-validations="required"
                   />
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="email:required"
-                  >
-                    An email is required.
-                  </div>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="email:email"
-                  >
-                    Email is not valid.
-                  </div>
                 </div>
                 <div className="form-group mb-md-0">
                   <input
                     className="form-control"
-                    id="phone"
-                    type="tel"
-                    placeholder="Your Phone *"
-                    data-sb-validations="required"
+                    id="link_fb"
+                    type="text"
+                    name="link_fb"
+                    placeholder="Link Facebook phụ huynh*"
+                    data-sb-validations="required,email"
+                    required
                   />
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="phone:required"
-                  >
-                    A phone number is required.
-                  </div>
                 </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-group form-group-textarea mb-md-0">
-                  <textarea
-                    className="form-control"
-                    id="message"
-                    placeholder="Your Message *"
-                    data-sb-validations="required"
-                  ></textarea>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="message:required"
-                  >
-                    A message is required.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="d-none" id="submitSuccessMessage">
-              <div className="text-center text-white mb-3">
-                <div className="fw-bolder">Form submission successful!</div>
-                To activate this form, sign up at
-                <br />
-                <a href="https://startbootstrap.com/solution/contact-forms">
-                  https://startbootstrap.com/solution/contact-forms
-                </a>
-              </div>
-            </div>
-            <div className="d-none" id="submitErrorMessage">
-              <div className="text-center text-danger mb-3">
-                Error sending message!
               </div>
             </div>
             <div className="text-center">
               <button
-                className="btn btn-primary btn-xl text-uppercase disabled"
-                id="submitButton"
+                className="btn btn-primary btn-xl text-uppercase"
                 type="submit"
               >
-                Send Message
+                Gửi Đơn
               </button>
             </div>
           </form>
@@ -678,29 +1099,16 @@ function App() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-4 text-lg-start">
-              Copyright &copy; Your Website 2023
+              Copyright &copy; Amazing Education 2025
             </div>
             <div className="col-lg-4 my-3 my-lg-0">
               <a
                 className="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Twitter"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                className="btn btn-dark btn-social mx-2"
-                href="#!"
+                href="https://www.facebook.com/amazingeducationn/"
                 aria-label="Facebook"
+                target="_blank"
               >
                 <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                className="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="LinkedIn"
-              >
-                <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
             <div className="col-lg-4 text-lg-end">
@@ -714,348 +1122,6 @@ function App() {
           </div>
         </div>
       </footer>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal1"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <img
-                      className="img-fluid d-block mx-auto"
-                      src="/img/portfolio/1.jpg"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Threads
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Illustration
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal2"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <img
-                      className="img-fluid d-block mx-auto"
-                      src="/img/portfolio/2.jpg"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Explore
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Graphic Design
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal3"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <img
-                      className="img-fluid d-block mx-auto"
-                      src="/img/portfolio/3.jpg"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Finish
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Identity
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal4"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <img
-                      className="img-fluid d-block mx-auto"
-                      src="/img/portfolio/4.jpg"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Lines
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Branding
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal5"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <img
-                      className="img-fluid d-block mx-auto"
-                      src="/img/portfolio/5.jpg"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Southwest
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Website Design
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal6"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Project Name</h2>
-                    <p className="item-intro text-muted">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <img
-                      className="img-fluid d-block mx-auto"
-                      src="/img/portfolio/6.jpg"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Window
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Photography
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i className="fas fa-xmark me-1"></i>
-                      Close Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
       <script src="js/scripts.js"></script>
       <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

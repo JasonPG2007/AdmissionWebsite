@@ -16,8 +16,30 @@
 <body>
   <div id="root" style="width: 100%;"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <a href="https://m.me/610760265444414" class="message-btn" target="_blank">
+    <i class="fa-brands fa-facebook-messenger" style="color: #0967FF;"></i>
+  </a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
+<script>
+  const section = document.querySelectorAll(".fade-in");
+
+  document.addEventListener('scroll', () => {
+    section.forEach((el) => {
+      if (isInView(el)) {
+        el.classList.add("fade-in--visible");
+      }
+    });
+  });
+
+  function isInView(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.bottom > 0 &&
+      rect.top < (window.innerHeight - 150 || document.documentElement.clientHeight - 150)
+    );
+  }
+</script>
 
 </html>
