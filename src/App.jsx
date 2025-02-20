@@ -1255,6 +1255,7 @@ function App() {
                     name="phone"
                     placeholder="SĐT phụ huynh *"
                     data-sb-validations="required,email"
+                    inputMode="numeric"
                   />
                 </div>
                 <div className="form-group">
