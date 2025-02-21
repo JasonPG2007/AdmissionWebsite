@@ -12,6 +12,12 @@ function App() {
   const [phoneZalo, setPhoneZalo] = useState("");
   const [errorPhone, setErrorPhone] = useState("");
   const [errorPhoneZalo, setErrorPhoneZalo] = useState("");
+  const [timeStudy, setTimeStudy] = useState("");
+
+  // Hàm xử lý sự kiện thay đổi giá trị chọn
+  const handleChangeTimeStudy = (e) => {
+    setTimeStudy(e.target.value);
+  };
 
   useEffect(() => {
     if (phone.length === 10) {
@@ -1303,6 +1309,35 @@ function App() {
                     required
                   />
                 </div>
+                <div className="form-group">
+                  <select
+                    name="time_study"
+                    id="time_study"
+                    className="form-control"
+                    style={{ padding: "20px" }}
+                    required
+                    value={timeStudy}
+                    onChange={handleChangeTimeStudy}
+                  >
+                    <option value="">
+                      Bạn có thể học các lớp vào thời gian nào dưới đây?
+                    </option>
+                    <option value="Morning">Sáng</option>
+                    <option value="Afternoon">Chiều</option>
+                    <option value="Evening">Tối</option>
+                    <option value="Weekend">Cuối tuần</option>
+                    <option value="Other">Khác</option>
+                  </select>
+                  {timeStudy === "Other" && (
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Thời gian khác (ghi rõ cụ thể)"
+                      style={{ padding: "20px", marginTop: "10px" }}
+                      name="time_study"
+                    />
+                  )}
+                </div>
                 <div className="form-group mb-md-0">
                   <select
                     name="programme"
@@ -1312,22 +1347,22 @@ function App() {
                     required
                   >
                     <option value="">Khóa học</option>
-                    <option value="Pre-kids">Pre-Kids</option>
+                    {/* <option value="Pre-kids">Pre-Kids</option> */}
                     <option value="Kids">Kids</option>
-                    <option value="Teens">Teens</option>
-                    <option value="Giao tiếp tự tin">Giao tiếp tự tin</option>
+                    {/* <option value="Teens">Teens</option> */}
+                    {/* <option value="Giao tiếp tự tin">Giao tiếp tự tin</option>
                     <option value="Giao tiếp thông thường">
                       Giao tiếp thông thường
-                    </option>
+                    </option> */}
                     <option value="Luyện phỏng vấn visa">
                       Luyện phỏng vấn visa
                     </option>
                     <option value="Luyện âm Anh Mỹ cơ bản">
                       Luyện âm Anh Mỹ cơ bản
                     </option>
-                    <option value="Luyện âm Anh Mỹ nâng cao">
+                    {/* <option value="Luyện âm Anh Mỹ nâng cao">
                       Luyện âm Anh Mỹ nâng cao
-                    </option>
+                    </option> */}
                   </select>
                 </div>
               </div>
