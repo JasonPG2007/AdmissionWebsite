@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./assets/css/styles.css";
 import "./assets/js/scripts";
 import emailjs from "emailjs-com";
@@ -7,9 +7,74 @@ function App() {
   const form = useRef();
   const [isFocused, setIsFocused] = useState(false);
   const [date, setDate] = useState("");
+  const [isAdult, setIsAdult] = useState(null);
+  const [phone, setPhone] = useState("");
+  const [phoneZalo, setPhoneZalo] = useState("");
+  const [errorPhone, setErrorPhone] = useState("");
+  const [errorPhoneZalo, setErrorPhoneZalo] = useState("");
+
+  useEffect(() => {
+    if (phone.length === 10) {
+      setErrorPhone();
+    } else if (phone.length > 0) {
+      setErrorPhone("Số điện thoại không hợp lệ");
+    } else {
+      setErrorPhone(""); // Không hiển thị lỗi khi không có số
+    }
+  }, [phone]);
+
+  useEffect(() => {
+    if (phoneZalo.length === 10) {
+      setErrorPhoneZalo();
+    } else if (phoneZalo.length > 0) {
+      setErrorPhoneZalo("Số điện thoại không hợp lệ");
+    } else {
+      setErrorPhoneZalo(""); // Không hiển thị lỗi khi không có số
+    }
+  }, [phoneZalo]);
+
+  const handleBlur = () => {
+    setIsFocused(date !== "");
+    if (date > "2025-12-31") {
+      setDate("2025-12-31"); // Reset về giá trị tối đa nếu nhập quá phạm vi
+    }
+  };
+
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+
+    setDate(e.target.value);
+
+    // Get date now
+    const today = new Date();
+    // alert(`Tháng hiện tại: ${today.getMonth() + 1}`);
+    // alert(`Tháng đã chọn: ${selectedDate.getMonth() + 1}`);
+    // alert(today.getMonth() + 1 - (selectedDate.getMonth() + 1));
+    // Calculate Age
+    const yearBirth = today.getFullYear() - selectedDate.getFullYear();
+    const monthBirth = today.getMonth() + 1 - (selectedDate.getMonth() + 1);
+    const dayBirth = today.getDate() + 1 - selectedDate.getDate();
+    const isOver16 =
+      yearBirth > 16 ||
+      (yearBirth === 16 && monthBirth < 0) ||
+      (yearBirth === 16 && monthBirth === 0 && dayBirth <= 0);
+
+    setIsAdult(isOver16);
+  };
   const sendEmail = (e) => {
     e.preventDefault();
-
+    if (phone.length !== 10) {
+      setErrorPhone("Số điện thoại không hợp lệ!");
+      return;
+    } else {
+      setErrorPhone();
+    }
+    if (phoneZalo.length !== 10) {
+      setErrorPhoneZalo("Số điện thoại không hợp lệ!");
+      return;
+    } else {
+      setErrorPhoneZalo();
+    }
     emailjs
       .sendForm(
         "service_jrgaq57",
@@ -1146,7 +1211,7 @@ function App() {
                     className="form-control"
                     id="name"
                     type="text"
-                    placeholder="Họ tên học viên *"
+                    placeholder="Họ và tên học viên *"
                     data-sb-validations="required"
                     required
                     name="full_name"
@@ -1160,25 +1225,39 @@ function App() {
                     name="birthday"
                     required
                     value={date}
+                    inputMode="numeric"
                     onFocus={() => setIsFocused(true)}
-                    onBlur={() => setIsFocused(date !== "")}
-                    onChange={(e) => setDate(e.target.value)}
+                    onBlur={handleBlur}
+                    onChange={handleDateChange}
                     style={{ padding: "20px" }}
                   />
+                  <p style={{ color: "orangered" }}>
+                    * Vui lòng kiểm tra kỹ ngày tháng năm sinh
+                  </p>
                   <label
                     htmlFor="date"
                     style={{
                       position: "absolute",
                       left: "20px",
-                      bottom: isFocused ? "40px" : "20px",
+                      bottom: isFocused ? "40px" : "50px",
                       fontSize: isFocused ? "12px" : "16px",
                       color: isFocused ? "transparent" : "#666",
                       transition: "all 0.2s ease-in-out",
                     }}
                     className="d-block d-md-none"
                   >
-                    Ngày sinh
+                    mm/dd/yyyy
                   </label>
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    id="address"
+                    type="text"
+                    placeholder="Địa chỉ (Số nhà + Tên đường)"
+                    data-sb-validations="required"
+                    name="address"
+                  />
                 </div>
                 <div className="form-group">
                   <input
@@ -1205,18 +1284,19 @@ function App() {
                 <div className="form-group">
                   <input
                     className="form-control"
-                    id="address"
+                    id="country"
                     type="text"
-                    placeholder="Địa chỉ"
-                    data-sb-validations="required"
-                    name="address"
+                    placeholder="Quốc gia *"
+                    data-sb-validations="required,email"
+                    name="country"
+                    required
                   />
                 </div>
                 <div className="form-group">
                   <input
                     className="form-control"
-                    id="phone"
-                    type="tel"
+                    id="school"
+                    type="text"
                     placeholder="Trường học (Nhập 'Đã tốt nghiệp' nếu không còn đi học') *"
                     data-sb-validations="required"
                     name="school"
@@ -1257,10 +1337,11 @@ function App() {
                     className="form-control"
                     id="full_name_parent"
                     type="text"
-                    placeholder="Họ tên phụ huynh *"
+                    placeholder="Họ và tên phụ huynh *"
                     name="full_name_parent"
                     data-sb-validations="required"
                     required
+                    disabled={isAdult}
                   />
                 </div>
                 <div className="form-group">
@@ -1270,8 +1351,9 @@ function App() {
                     className="form-control"
                     style={{ padding: "20px" }}
                     required
+                    disabled={isAdult}
                   >
-                    <option value="">Mối quan hệ</option>
+                    <option value="">Mối quan hệ với học viên</option>
                     <option value="Father">Cha/Bố</option>
                     <option value="Mother">Mẹ</option>
                     <option value="Brothers and sisters">Anh chị em</option>
@@ -1283,13 +1365,26 @@ function App() {
                   <input
                     className="form-control"
                     id="phone_parent"
-                    type="number"
+                    type="text"
                     name="phone"
                     placeholder="SĐT phụ huynh *"
                     data-sb-validations="required,email"
-                    inputMode="numeric"
                     required
+                    disabled={isAdult}
+                    onInput={(e) => {
+                      // Xóa mọi ký tự không phải số
+                      e.target.value = e.target.value.replace(/\D/g, "");
+
+                      // Giới hạn số lượng chữ số nhập vào là 10
+                      if (e.target.value.length > 10) {
+                        e.target.value = e.target.value.slice(0, 10);
+                      }
+                      setPhone(e.target.value);
+                    }}
                   />
+                  {errorPhone != null && (
+                    <p style={{ color: "red" }}>{errorPhone}</p>
+                  )}
                 </div>
                 <div className="form-group">
                   <input
@@ -1299,18 +1394,33 @@ function App() {
                     placeholder="Email phụ huynh"
                     name="email_parent"
                     data-sb-validations="required"
+                    disabled={isAdult}
                   />
                 </div>
                 <div className="form-group mb-md-0">
                   <input
                     className="form-control"
-                    id="link_fb"
+                    id="zalo"
                     type="text"
-                    name="link_fb"
-                    placeholder="Link Facebook phụ huynh*"
+                    name="zalo"
+                    placeholder="Zalo / WhatsApp*"
                     data-sb-validations="required,email"
                     required
+                    disabled={isAdult}
+                    onInput={(e) => {
+                      // Xóa mọi ký tự không phải số
+                      e.target.value = e.target.value.replace(/\D/g, "");
+
+                      // Giới hạn số lượng chữ số nhập vào là 10
+                      if (e.target.value.length > 10) {
+                        e.target.value = e.target.value.slice(0, 10);
+                      }
+                      setPhoneZalo(e.target.value);
+                    }}
                   />
+                  {errorPhoneZalo != null && (
+                    <p style={{ color: "red" }}>{errorPhoneZalo}</p>
+                  )}
                 </div>
               </div>
             </div>
