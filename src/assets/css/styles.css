@@ -11628,7 +11628,7 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #f45f31;
-  background-image: url("/img/register.jpg");
+  background-image: url("/img/register.webp");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -11719,4 +11719,10 @@ section#contact form#contactForm :-ms-input-placeholder {
   100% {
     transform: translateY(0);
   }
+}
+.out-of {
+  color: red;
+}
+.still {
+  color: green;
 }

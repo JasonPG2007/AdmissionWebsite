@@ -172,20 +172,33 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Tiếng Anh cho Pre-Kids được thiết kế dành riêng
+                      cho các bé từ 4 - 5 tuổi, giúp các bé làm quen với tiếng
+                      Anh một cách tự nhiên và vui vẻ. Thông qua các hoạt động
+                      tương tác như hát, kể chuyện, trò chơi và thủ công, bé sẽ
+                      phát triển khả năng nghe, nói và phản xạ tiếng Anh ngay từ
+                      giai đoạn đầu đời.
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Threads
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Illustration
+                        <strong>Suất học: </strong>
+                        <span className="out-of">Hết chỗ</span>
                       </li>
                     </ul>
                     <button
@@ -223,25 +236,39 @@ function App() {
                     <img
                       loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="/img/pronounce.webp"
+                      src="/img/pronounce-2.webp"
                       alt="..."
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Luyện Âm Anh Mỹ Cơ Bản giúp học viên cải thiện
+                      phát âm, nhấn âm và ngữ điệu chuẩn Mỹ. Chương trình tập
+                      trung vào thực hành qua bài tập nghe, nói, phản xạ và
+                      chỉnh sửa lỗi sai phổ biến, giúp giao tiếp tự nhiên và rõ
+                      ràng hơn. Phù hợp cho người mới bắt đầu!
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Threads
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Illustration
+                        <strong>Suất học: </strong>
+                        <span className="out-of">
+                          Hết chỗ (có thể đăng kí cho lớp tháng 6/2025)
+                        </span>
                       </li>
                     </ul>
                     <button
@@ -284,77 +311,32 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Luyện Âm Anh Mỹ Nâng Cao giúp học viên hoàn thiện
+                      phát âm, nhấn âm, nối âm và ngữ điệu tự nhiên như người
+                      bản xứ. Chương trình tập trung vào luyện phản xạ, cải
+                      thiện độ trôi chảy và chỉnh sửa chi tiết từng âm để giao
+                      tiếp chuyên nghiệp, tự tin hơn.
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Threads
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Illustration
-                      </li>
-                    </ul>
-                    <button
-                      className="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      Khóa học khác
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="portfolio-modal modal fade"
-        id="portfolioModal1"
-        tabIndex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="close-modal" data-bs-dismiss="modal">
-              <img loading="lazy" src="/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <div className="modal-body">
-                    <h2 className="text-uppercase">Pre-Kids</h2>
-                    <p className="item-intro text-muted">
-                      Tiếng Anh cho trẻ từ 4-5 tuổi.
-                    </p>
-                    <img
-                      loading="lazy"
-                      className="img-fluid d-block mx-auto"
-                      src="/img/pre-kids.webp"
-                      alt="..."
-                    />
-                    <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
-                    </p>
-                    <ul className="list-inline">
-                      <li>
-                        <strong>Client:</strong>
-                        Threads
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Illustration
+                        <strong>Suất học: </strong>
+                        <span className="out-of">Hết chỗ</span>
                       </li>
                     </ul>
                     <button
@@ -399,20 +381,35 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Tiếng Anh cho Kids dành cho trẻ em từ 6 - 11
+                      tuổi, giúp bé xây dựng nền tảng tiếng Anh vững chắc thông
+                      qua phương pháp học hiện đại và sáng tạo. Với các chủ đề
+                      gần gũi, thú vị cùng hoạt động tương tác như trò chơi, bài
+                      hát, kể chuyện và đóng vai, bé sẽ phát triển kỹ năng nghe
+                      - nói - đọc - viết một cách tự nhiên và hiệu quả.
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Explore
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Graphic Design
+                        <strong>Suất học: </strong>
+                        <span className="still">
+                          còn 9 suất 6-8 tuổi (Khai Giảng tháng 3/2025)
+                        </span>
                       </li>
                     </ul>
                     <button
@@ -455,20 +452,33 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Tiếng Anh cho Teens từ 12 - 14 tuổi giúp học viên phát
+                      triển toàn diện nghe - nói - đọc - viết, tự tin giao tiếp
+                      và ứng dụng thực tế. Chương trình kết hợp thảo luận, tranh
+                      biện, thuyết trình cùng giáo trình hiện đại, giúp nâng cao
+                      tư duy phản biện và chuẩn bị cho các kỳ thi quốc tế như
+                      TOEFL, IELTS.
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Finish
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Identity
+                        <strong>Suất học: </strong>
+                        <span className="out-of">Hết chỗ</span>
                       </li>
                     </ul>
                     <button
@@ -511,20 +521,33 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Giao Tiếp Tự Tin giúp học viên rèn luyện kỹ năng
+                      nghe - nói, phát âm chuẩn và phản xạ tự nhiên trong mọi
+                      tình huống. Thông qua các hoạt động thực hành như hội
+                      thoại, thảo luận, đóng vai, học viên sẽ xây dựng sự tự
+                      tin, cải thiện lưu loát và sử dụng tiếng Anh linh hoạt
+                      trong cuộc sống, học tập và công việc.
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Lines
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Branding
+                        <strong>Suất học: </strong>
+                        <span className="out-of">Hết chỗ</span>
                       </li>
                     </ul>
                     <button
@@ -567,20 +590,33 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Giao Tiếp Thông Thường giúp học viên nâng cao kỹ
+                      năng nghe - nói, phản xạ nhanh và sử dụng tiếng Anh tự
+                      nhiên trong đời sống hàng ngày. Với phương pháp thực hành
+                      qua hội thoại, tình huống thực tế và phát âm chuẩn, khóa
+                      học giúp học viên tự tin giao tiếp hiệu quả trong học tập,
+                      công việc và du lịch.
+                      <br />
+                      <hr />
+                      <h3>Thông tin chung:</h3>
+                      + Các lớp học sẽ kéo dài 60 phút/ buổi (bao gồm 5 phút
+                      giải lao), tần suất lớp học là 2 buổi/ tuần. 08 buổi học
+                      được tính là 01 tháng.
+                      <br />+ Hình thức học: trực tuyến qua ứng dụng Zoom Pro.
+                      Học viên cần cài app và học thông qua app để tối ưu công
+                      cụ tương tác trong lớp.
+                      <br />+ Yêu cầu mạng ổn định và thiết bị học có camera,
+                      không gian học yên tĩnh
+                      <br />+ Học phí đóng trước 7 ngày so với ngày học đầu tiên
+                      của tháng tiếp theo để giữ chỗ trong lớp. Amazing
+                      Education không tự động giữ chỗ cho học viên. Học phí đóng
+                      3 tháng/ lần được giảm 5%. Học phí không bao gồm giáo
+                      trình học (nếu có).
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Southwest
-                      </li>
-                      <li>
-                        <strong>Category:</strong>
-                        Website Design
+                        <strong>Suất học: </strong>
+                        <span className="out-of">Hết chỗ</span>
                       </li>
                     </ul>
                     <button
@@ -623,20 +659,20 @@ function App() {
                       width={"600px"}
                     />
                     <p>
-                      Use this area to describe your project. Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Est blanditiis
-                      dolorem culpa incidunt minus dignissimos deserunt repellat
-                      aperiam quasi sunt officia expedita beatae cupiditate,
-                      maiores repudiandae, nostrum, reiciendis facere nemo!
+                      Khóa học Luyện Phỏng Vấn Visa Mỹ giúp học viên chuẩn bị kỹ
+                      lưỡng về ngôn ngữ, tâm lý và kỹ năng trả lời để vượt qua
+                      buổi phỏng vấn tự tin, thuyết phục. Chương trình cá nhân
+                      hóa theo hồ sơ từng học viên, tập trung vào các câu hỏi
+                      thực tế, cách diễn đạt rõ ràng và phong thái chuyên
+                      nghiệp.
                     </p>
                     <ul className="list-inline">
                       <li>
-                        <strong>Client:</strong>
-                        Window
+                        <strong>Suất học: </strong>
+                        <span className="still">còn 05 suất</span>
                       </li>
                       <li>
-                        <strong>Category:</strong>
-                        Photography
+                        <i style={{ color: "orange" }}>(Đặt lịch riêng)</i>
                       </li>
                     </ul>
                     <button
@@ -913,21 +949,19 @@ function App() {
                 <img
                   loading="lazy"
                   className="rounded-circle img-fluid"
-                  src="/img/about/1.jpg"
+                  src="/img/about/2.jpg"
                   alt="..."
                 />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 className="subheading">Our Humble Beginnings</h4>
+                  <h4 className="subheading">Chúng Tôi Là Ai?</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    Amazing Education là một đơn vị giáo dục chuyên về các khoá
+                    đào tạo tiếng Anh ONLINE được sáng lập bởi cô Nguyễn Thị Trà
+                    My (Amy), Thạc sĩ giáo dục chuyên ngành ngôn ngữ Anh.
                   </p>
                 </div>
               </div>
@@ -937,21 +971,19 @@ function App() {
                 <img
                   loading="lazy"
                   className="rounded-circle img-fluid"
-                  src="/img/about/2.jpg"
+                  src="/img/about/1.jpg"
                   alt="..."
                 />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 className="subheading">An Agency is Born</h4>
+                  <h4 className="subheading">Kinh Nghiệm</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    Cô có 20 năm kinh nghiệm giảng dạy và 15 năm quản lí giáo
+                    dục ở các hệ thống Anh ngữ lớn và các trường Quốc tế như Anh
+                    văn Việt Mỹ, AMA Da Nang, Skyline và Thành phố giáo dục IEC.
                   </p>
                 </div>
               </div>
@@ -967,15 +999,17 @@ function App() {
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>December 2015</h4>
-                  <h4 className="subheading">Transition to Full Service</h4>
+                  <h4 className="subheading">Chương trình & Đội ngũ</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    Cô đã tiên phong xây dựng và phát triển chương trình tiếng
+                    Anh online, phá bỏ rào cản địa lí và đã giúp được rất nhiều
+                    học viên không những ở Việt Nam mà còn ở nước ngoài. Cùng
+                    với cô, đội ngũ giáo viên, trợ giảng của Amazing Education
+                    luôn khiến học viên hài lòng vì phát âm và ngữ điệu chuẩn
+                    Anh Mỹ, nghiệp vụ sư phạm cao cùng chương trình học chuẩn
+                    Quốc tế.
                   </p>
                 </div>
               </div>
@@ -991,15 +1025,13 @@ function App() {
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>July 2020</h4>
-                  <h4 className="subheading">Phase Two Expansion</h4>
+                  <h4 className="subheading">Cơ hội học tập</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    Hiện tại, cô Amy và một số giáo viên đang theo học tại Mỹ
+                    nên sẽ mở thêm một số lớp với số lượng có hạn như thông tin
+                    bên dưới.
                   </p>
                 </div>
               </div>
@@ -1007,11 +1039,11 @@ function App() {
             <li className="timeline-inverted">
               <div className="timeline-image">
                 <h4>
-                  Be Part
+                  Hãy Cùng
                   <br />
-                  Of Our
+                  Viết Tiếp
                   <br />
-                  Story!
+                  Câu Chuyện
                 </h4>
               </div>
             </li>
@@ -1263,9 +1295,8 @@ function App() {
                     className="form-control"
                     id="email"
                     type="email"
-                    placeholder="Email phụ huynh *"
+                    placeholder="Email phụ huynh"
                     name="email_parent"
-                    required
                     data-sb-validations="required"
                   />
                 </div>
