@@ -1326,6 +1326,14 @@ function App() {
                     <option value="Afternoon">Chiều</option>
                     <option value="Evening">Tối</option>
                     <option value="Weekend">Cuối tuần</option>
+                    <option value="Morning & Weekend">Sáng & Cuối tuần</option>
+                    <option value="Afternoon & Weekend">
+                      Chiều & Cuối tuần
+                    </option>
+                    <option value="Evening & Weekend">Tối & Cuối tuần</option>
+                    <option value="Morning & Afternoon">Sáng & Chiều</option>
+                    <option value="Morning & Evening">Sáng & Tối</option>
+                    <option value="Afternoon & Evening">Chiều & Tối</option>
                     <option value="Other">Khác</option>
                   </select>
                   {timeStudy === "Other" && (
