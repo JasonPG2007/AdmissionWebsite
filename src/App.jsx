@@ -37,12 +37,14 @@ function App() {
   };
 
   useEffect(() => {
-    if (phone.length === 10) {
-      setErrorPhone();
-    } else if (phone.length > 0) {
-      setErrorPhone("Số điện thoại không hợp lệ");
-    } else {
-      setErrorPhone(""); // Không hiển thị lỗi khi không có số
+    if (!isAdult) {
+      if (phone.length === 10) {
+        setErrorPhone();
+      } else if (phone.length > 0) {
+        setErrorPhone("Số điện thoại không hợp lệ");
+      } else {
+        setErrorPhone(""); // Không hiển thị lỗi khi không có số
+      }
     }
   }, [phone]);
 
@@ -50,12 +52,14 @@ function App() {
     if (selectedTimes.length > 0) {
       setErrorTimeStudy();
     }
-    if (phoneZalo.length === 10) {
-      setErrorPhoneZalo();
-    } else if (phoneZalo.length > 0) {
-      setErrorPhoneZalo("Số điện thoại không hợp lệ");
-    } else {
-      setErrorPhoneZalo(""); // Không hiển thị lỗi khi không có số
+    if (!isAdult) {
+      if (phoneZalo.length === 10) {
+        setErrorPhoneZalo();
+      } else if (phoneZalo.length > 0) {
+        setErrorPhoneZalo("Số điện thoại không hợp lệ");
+      } else {
+        setErrorPhoneZalo(""); // Không hiển thị lỗi khi không có số
+      }
     }
   }, [phoneZalo]);
 
@@ -94,17 +98,19 @@ function App() {
       setErrorTimeStudy("Vui lòng chọn ít nhất một thời gian học.");
       return;
     }
-    if (phone.length !== 10) {
-      setErrorPhone("Số điện thoại không hợp lệ!");
-      return;
-    } else {
-      setErrorPhone();
-    }
-    if (phoneZalo.length !== 10) {
-      setErrorPhoneZalo("Số điện thoại không hợp lệ!");
-      return;
-    } else {
-      setErrorPhoneZalo();
+    if (!isAdult) {
+      if (phone.length !== 10) {
+        setErrorPhone("Số điện thoại không hợp lệ!");
+        return;
+      } else {
+        setErrorPhone();
+      }
+      if (phoneZalo.length !== 10) {
+        setErrorPhoneZalo("Số điện thoại không hợp lệ!");
+        return;
+      } else {
+        setErrorPhoneZalo();
+      }
     }
     emailjs
       .sendForm(
@@ -1168,7 +1174,7 @@ function App() {
                   style={{ objectFit: "cover" }}
                 />
                 <h4>Amy Nguyen</h4>
-                <p className="text-muted">CEO</p>
+                <p className="text-muted">CEO, Giáo viên</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
                   href="https://www.facebook.com/amy.nguyen.vietnam"
@@ -1203,15 +1209,15 @@ function App() {
                 <img
                   loading="lazy"
                   className="mx-auto rounded-circle"
-                  src="/img/avatar_amy_2.jpg"
+                  src="/img/dan-tam.jpg"
                   alt="member"
                   style={{ objectFit: "cover" }}
                 />
-                <h4>Amy Nguyen</h4>
-                <p className="text-muted">Giáo viên</p>
+                <h4>Nguyen Thi Dan Tam</h4>
+                <p className="text-muted">Kiểm thử</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="https://www.facebook.com/amy.nguyen.vietnam"
+                  href="https://www.facebook.com/nguyen.jennie.35574"
                   aria-label="Larry Parker Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
