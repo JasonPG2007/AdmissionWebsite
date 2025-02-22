@@ -1274,9 +1274,14 @@ function App() {
                     onFocus={() => setIsFocused(true)}
                     onBlur={handleBlur}
                     onChange={handleDateChange}
-                    style={{ padding: "20px" }}
+                    style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}
                   />
-                  <p style={{ color: "orangered" }}>
+                  <p
+                    style={{
+                      color: "orangered",
+                      fontFamily: "Arial, sans-serif",
+                    }}
+                  >
                     * Vui lòng kiểm tra kỹ ngày tháng năm sinh
                   </p>
                   <label
@@ -1380,7 +1385,10 @@ function App() {
                 </div>
                 <div className="form-group">
                   <div className="checkbox-group">
-                    <label htmlFor="">
+                    <label
+                      htmlFor=""
+                      style={{ fontFamily: "Arial, sans-serif" }}
+                    >
                       Bạn có thể học các lớp vào thời gian nào dưới đây? (theo
                       giờ Việt Nam) *
                     </label>
@@ -1392,7 +1400,8 @@ function App() {
                         id="morning"
                         onChange={handleCheckboxChange}
                       />
-                      <span className="checkmark"></span> Sáng
+                      <span className="checkmark"></span>{" "}
+                      <span className="font-radio">Sáng</span>
                     </label>
 
                     <label className="custom-checkbox">
@@ -1403,7 +1412,8 @@ function App() {
                         id="afternoon"
                         onChange={handleCheckboxChange}
                       />
-                      <span className="checkmark"></span> Chiều
+                      <span className="checkmark"></span>{" "}
+                      <span className="font-radio">Chiều</span>
                     </label>
 
                     <label className="custom-checkbox">
@@ -1414,7 +1424,8 @@ function App() {
                         value={"Evening"}
                         onChange={handleCheckboxChange}
                       />
-                      <span className="checkmark"></span> Tối
+                      <span className="checkmark"></span>{" "}
+                      <span className="font-radio">Tối</span>
                     </label>
                     <label className="custom-checkbox">
                       <input
@@ -1424,7 +1435,8 @@ function App() {
                         value={"Weekend"}
                         onChange={handleCheckboxChange}
                       />
-                      <span className="checkmark"></span> Cuối tuần
+                      <span className="checkmark"></span>{" "}
+                      <span className="font-radio">Cuối tuần</span>
                     </label>
 
                     <label className="custom-checkbox">
@@ -1435,7 +1447,8 @@ function App() {
                         value={"Other"}
                         onChange={handleOtherChange}
                       />
-                      <span className="checkmark"></span> Khác
+                      <span className="checkmark"></span>{" "}
+                      <span className="font-radio">Khác</span>
                     </label>
 
                     {showOtherInput && (
@@ -1457,7 +1470,7 @@ function App() {
                     name="programme"
                     id=""
                     className="form-control"
-                    style={{ padding: "20px" }}
+                    style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}
                     required
                   >
                     <option value="">Khóa học *</option>
@@ -1510,7 +1523,7 @@ function App() {
                     name="relationship"
                     id=""
                     className="form-control"
-                    style={{ padding: "20px" }}
+                    style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}
                     required={!isAdult}
                   >
                     <option value="">
