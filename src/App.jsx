@@ -12,11 +12,11 @@ function App() {
   const [phoneZalo, setPhoneZalo] = useState("");
   const [errorPhone, setErrorPhone] = useState("");
   const [errorPhoneZalo, setErrorPhoneZalo] = useState("");
-  const [timeStudy, setTimeStudy] = useState("");
+  const [showOtherInput, setShowOtherInput] = useState(false);
 
   // Hàm xử lý sự kiện thay đổi giá trị chọn
-  const handleChangeTimeStudy = (e) => {
-    setTimeStudy(e.target.value);
+  const handleOtherChange = (event) => {
+    setShowOtherInput(event.target.checked);
   };
 
   useEffect(() => {
@@ -1310,7 +1310,7 @@ function App() {
                   />
                 </div>
                 <div className="form-group">
-                  <select
+                  {/* <select
                     name="time_study"
                     id="time_study"
                     className="form-control"
@@ -1347,16 +1347,60 @@ function App() {
                       Sáng & Chiều & Tối & Cuối tuần
                     </option>
                     <option value="Other">Khác</option>
-                  </select>
-                  {timeStudy === "Other" && (
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Thời gian khác (ghi rõ cụ thể)"
-                      style={{ padding: "20px", marginTop: "10px" }}
-                      name="time_study"
-                    />
-                  )}
+                  </select> */}
+                  <div className="checkbox-group">
+                    <label htmlFor="">
+                      Bạn có thể học các lớp vào thời gian nào dưới đây?
+                    </label>
+                    <label className="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        value={"Morning"}
+                        name="time_study"
+                        id="morning"
+                      />
+                      <span className="checkmark"></span> Sáng
+                    </label>
+
+                    <label className="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        value={"Afternoon"}
+                        name="time_study"
+                        id="afternoon"
+                      />
+                      <span className="checkmark"></span> Chiều
+                    </label>
+
+                    <label className="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        name="time_study"
+                        id="evening"
+                        value={"Evening"}
+                      />
+                      <span className="checkmark"></span> Tối
+                    </label>
+
+                    <label className="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        name="time_study"
+                        id="other"
+                        onChange={handleOtherChange}
+                      />
+                      <span className="checkmark"></span> Khác
+                    </label>
+
+                    {showOtherInput && (
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Nhập thời gian khác..."
+                        name="time_study"
+                      />
+                    )}
+                  </div>
                 </div>
                 <div className="form-group mb-md-0">
                   <select

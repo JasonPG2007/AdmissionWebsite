@@ -11736,3 +11736,82 @@ section#contact form#contactForm :-ms-input-placeholder {
 select {
   font-weight: 500 !important;
 }
+
+/* CSS FOR RADIO TIME STUDY */
+.checkbox-group {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-left: 30px;
+}
+
+/* Ẩn checkbox mặc định */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Tạo hình checkbox */
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Khi được chọn, đổi màu checkbox */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #4caf50;
+}
+
+/* Hiệu ứng tick */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Hiển thị tick khi checked */
+.custom-checkbox input:checked + .checkmark::after {
+  display: block;
+}
+
+/* Hover đổi màu */
+.custom-checkbox:hover .checkmark {
+  background-color: #d6d6d6;
+}
+
+/* Input "Khác" */
+.other-input {
+  margin-top: 8px;
+  padding: 6px;
+  font-size: 14px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
