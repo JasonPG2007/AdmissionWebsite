@@ -11779,7 +11779,7 @@ select {
 
 /* Khi được chọn, đổi màu checkbox */
 .custom-checkbox input:checked + .checkmark {
-  background-color: #4caf50;
+  background-color: #f93f07;
 }
 
 /* Hiệu ứng tick */

@@ -15,6 +15,7 @@ function App() {
   const [showOtherInput, setShowOtherInput] = useState(false);
   const [selectedTimes, setSelectedTimes] = useState([]);
   const [errorTimeStudy, setErrorTimeStudy] = useState("");
+  const [isSendEmail, setIsSendEmail] = useState("");
 
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
@@ -98,13 +99,15 @@ function App() {
       setErrorTimeStudy("Vui lòng chọn ít nhất một thời gian học.");
       return;
     }
-    if (!isAdult) {
+    if (!isAdult || (isAdult && phone.length > 0)) {
       if (phone.length !== 10) {
         setErrorPhone("Số điện thoại không hợp lệ!");
         return;
       } else {
         setErrorPhone();
       }
+    }
+    if (!isAdult || (isAdult && phoneZalo.length > 0)) {
       if (phoneZalo.length !== 10) {
         setErrorPhoneZalo("Số điện thoại không hợp lệ!");
         return;
@@ -112,6 +115,7 @@ function App() {
         setErrorPhoneZalo();
       }
     }
+    setIsSendEmail(true);
     emailjs
       .sendForm(
         "service_jrgaq57",
@@ -122,11 +126,13 @@ function App() {
       .then(
         (result) => {
           console.log("Email sent:", result.text);
-          alert("Email sent successfully!");
+          alert("🎉 Chúc mừng bạn đã đăng ký thành công! 😊");
+          setIsSendEmail(false);
+          window.location.reload();
         },
         (error) => {
           console.log("Error:", error.text);
-          alert("Failed to send email.");
+          alert("❌ Đăng ký thất bại! 😢. Vui lòng thử lại sau! ");
         }
       );
   };
@@ -338,7 +344,7 @@ function App() {
                     <img
                       loading="lazy"
                       className="img-fluid d-block mx-auto"
-                      src="/img/pronounce-2.webp"
+                      src="/img/pronounce.webp"
                       alt="..."
                       width={"600px"}
                     />
@@ -1286,6 +1292,19 @@ function App() {
                     mm/dd/yyyy
                   </label>
                 </div>
+                {isAdult && (
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      id="email_student"
+                      type="email"
+                      placeholder="Email học viên *"
+                      data-sb-validations="required"
+                      name="email_student"
+                      required
+                    />
+                  </div>
+                )}
                 <div className="form-group">
                   <input
                     className="form-control"
@@ -1334,16 +1353,16 @@ function App() {
                     className="form-control"
                     id="school"
                     type="text"
-                    placeholder="Trường học (Nhập 'Đã tốt nghiệp' nếu không còn đi học') *"
+                    placeholder="Trường đang theo học"
                     data-sb-validations="required"
                     name="school"
-                    required
                   />
                 </div>
                 <div className="form-group">
                   <div className="checkbox-group">
                     <label htmlFor="">
-                      Bạn có thể học các lớp vào thời gian nào dưới đây?
+                      Bạn có thể học các lớp vào thời gian nào dưới đây? (theo
+                      giờ Việt Nam) *
                     </label>
                     <label className="custom-checkbox">
                       <input
@@ -1376,6 +1395,16 @@ function App() {
                         onChange={handleCheckboxChange}
                       />
                       <span className="checkmark"></span> Tối
+                    </label>
+                    <label className="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        name="time_study"
+                        id="weekend"
+                        value={"Weekend"}
+                        onChange={handleCheckboxChange}
+                      />
+                      <span className="checkmark"></span> Cuối tuần
                     </label>
 
                     <label className="custom-checkbox">
@@ -1411,23 +1440,29 @@ function App() {
                     style={{ padding: "20px" }}
                     required
                   >
-                    <option value="">Khóa học</option>
-                    {/* <option value="Pre-kids">Pre-Kids</option> */}
+                    <option value="">Khóa học *</option>
+                    <option value="Pre-kids" disabled>
+                      Pre-Kids (Hết chỗ)
+                    </option>
                     <option value="Kids">Kids</option>
-                    {/* <option value="Teens">Teens</option> */}
-                    {/* <option value="Giao tiếp tự tin">Giao tiếp tự tin</option>
-                    <option value="Giao tiếp thông thường">
-                      Giao tiếp thông thường
-                    </option> */}
+                    <option value="Teens" disabled>
+                      Teens (Hết chỗ)
+                    </option>
+                    <option value="Giao tiếp tự tin" disabled>
+                      Giao tiếp tự tin (Hết chỗ)
+                    </option>
+                    <option value="Giao tiếp thông thường" disabled>
+                      Giao tiếp thông thường (Hết chỗ)
+                    </option>
                     <option value="Luyện phỏng vấn visa">
                       Luyện phỏng vấn visa
                     </option>
                     <option value="Luyện âm Anh Mỹ cơ bản">
                       Luyện âm Anh Mỹ cơ bản
                     </option>
-                    {/* <option value="Luyện âm Anh Mỹ nâng cao">
-                      Luyện âm Anh Mỹ nâng cao
-                    </option> */}
+                    <option value="Luyện âm Anh Mỹ nâng cao" disabled>
+                      Luyện âm Anh Mỹ nâng cao (Hết chỗ)
+                    </option>
                   </select>
                 </div>
                 {isAdult && (
@@ -1442,11 +1477,12 @@ function App() {
                     className="form-control"
                     id="full_name_parent"
                     type="text"
-                    placeholder="Họ và tên phụ huynh *"
+                    placeholder={
+                      isAdult ? "Họ và tên phụ huynh" : "Họ và tên phụ huynh *"
+                    }
                     name="full_name_parent"
                     data-sb-validations="required"
-                    required
-                    disabled={isAdult}
+                    required={!isAdult}
                   />
                 </div>
                 <div className="form-group">
@@ -1455,10 +1491,13 @@ function App() {
                     id=""
                     className="form-control"
                     style={{ padding: "20px" }}
-                    required
-                    disabled={isAdult}
+                    required={!isAdult}
                   >
-                    <option value="">Mối quan hệ với học viên</option>
+                    <option value="">
+                      {isAdult
+                        ? "Mối quan hệ với học viên"
+                        : "Mối quan hệ với học viên *"}
+                    </option>
                     <option value="Father">Cha/Bố</option>
                     <option value="Mother">Mẹ</option>
                     <option value="Brothers and sisters">Anh chị em</option>
@@ -1472,10 +1511,9 @@ function App() {
                     id="phone_parent"
                     type="text"
                     name="phone"
-                    placeholder="SĐT phụ huynh *"
+                    placeholder={isAdult ? "SĐT phụ huynh" : "SĐT phụ huynh *"}
                     data-sb-validations="required,email"
-                    required
-                    disabled={isAdult}
+                    required={!isAdult}
                     onInput={(e) => {
                       // Xóa mọi ký tự không phải số
                       e.target.value = e.target.value.replace(/\D/g, "");
@@ -1499,7 +1537,6 @@ function App() {
                     placeholder="Email phụ huynh"
                     name="email_parent"
                     data-sb-validations="required"
-                    disabled={isAdult}
                   />
                 </div>
                 <div className="form-group mb-md-0">
@@ -1508,10 +1545,11 @@ function App() {
                     id="zalo"
                     type="text"
                     name="zalo"
-                    placeholder="Zalo / WhatsApp*"
+                    placeholder={
+                      isAdult ? "Zalo / WhatsApp" : "Zalo / WhatsApp *"
+                    }
                     data-sb-validations="required,email"
-                    required
-                    disabled={isAdult}
+                    required={!isAdult}
                     onInput={(e) => {
                       // Xóa mọi ký tự không phải số
                       e.target.value = e.target.value.replace(/\D/g, "");
@@ -1530,16 +1568,31 @@ function App() {
               </div>
             </div>
             <div className="text-center">
-              <button
-                className="btn btn-primary btn-xl text-uppercase"
-                type="submit"
-              >
-                Đăng ký{" "}
-                <i
-                  className="fas fa-paper-plane"
-                  style={{ paddingLeft: "5px" }}
-                ></i>
-              </button>
+              {!isSendEmail && (
+                <button
+                  className="btn btn-primary btn-xl text-uppercase"
+                  type="submit"
+                >
+                  Đăng ký{" "}
+                  <i
+                    className="fas fa-paper-plane"
+                    style={{ paddingLeft: "5px" }}
+                  ></i>
+                </button>
+              )}
+              {isSendEmail && (
+                <button
+                  className="btn btn-primary btn-xl text-uppercase"
+                  type="submit"
+                  disabled
+                >
+                  Đang xử lý{" "}
+                  <i
+                    className="fas fa-spinner fa-spin"
+                    style={{ paddingLeft: "5px" }}
+                  ></i>
+                </button>
+              )}
             </div>
           </form>
         </div>
