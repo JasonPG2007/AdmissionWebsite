@@ -817,7 +817,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -845,7 +845,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -873,7 +873,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -901,7 +901,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -931,7 +931,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -961,7 +961,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -991,7 +991,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
@@ -1021,7 +1021,7 @@ function App() {
                 >
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
-                      <i className="fas fa-plus fa-3x"></i>
+                      <i className="fas fa-eye fa-3x"></i>
                     </div>
                   </div>
                   <img
