@@ -126,7 +126,9 @@ function App() {
       .then(
         (result) => {
           console.log("Email sent:", result.text);
-          alert("🎉 Chúc mừng bạn đã đăng ký thành công! 😊");
+          alert(
+            "🎉 Chúc mừng bạn đã đăng ký thành công! 😊\n Amazing Education sẽ liên hệ với bạn trong vòng 24h. Bạn hãy để ý tin nhắn messenger hoặc email nhé!"
+          );
           setIsSendEmail(false);
           window.location.reload();
         },
@@ -1292,6 +1294,20 @@ function App() {
                     mm/dd/yyyy
                   </label>
                 </div>
+
+                {isAdult && (
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      id="subscriber_email"
+                      type="email"
+                      placeholder="Email người đăng ký *"
+                      data-sb-validations="required"
+                      name="subscriber_email"
+                      required
+                    />
+                  </div>
+                )}
                 {isAdult && (
                   <div className="form-group">
                     <input
@@ -1303,6 +1319,10 @@ function App() {
                       name="email_student"
                       required
                     />
+                    <span style={{ color: "orangered" }}>
+                      * Nhập email học viên giống email người đăng ký nếu cùng
+                      một người
+                    </span>
                   </div>
                 )}
                 <div className="form-group">
