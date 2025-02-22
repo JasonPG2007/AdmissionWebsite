@@ -1331,6 +1331,18 @@ function App() {
                   </div>
                 )}
                 <div className="form-group">
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      id="link_fb"
+                      type="text"
+                      placeholder="Link tài khoản Facebook"
+                      data-sb-validations="required"
+                      name="link_fb"
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
                   <input
                     className="form-control"
                     id="address"
@@ -1504,6 +1516,7 @@ function App() {
                   </span>
                 )}
               </div>
+
               <div className="col-md-6">
                 <div className="form-group">
                   <input

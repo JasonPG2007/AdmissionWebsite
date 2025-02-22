@@ -11302,7 +11302,7 @@ header.masthead {
   background-size: cover;
 }
 header.masthead .masthead-subheading {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-style: italic;
   line-height: 1.5rem;
   margin-bottom: 25px;
@@ -11816,5 +11816,5 @@ select {
   border-radius: 4px;
 }
 .font-radio {
-  font-family: "Arial";
+  font-family: "Montserrat, sans-serif";
 }
