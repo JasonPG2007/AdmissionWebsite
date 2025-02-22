@@ -1424,6 +1424,11 @@ function App() {
                     </option> */}
                   </select>
                 </div>
+                {isAdult && (
+                  <span style={{ color: "red" }}>
+                    Từ đủ 16 tuổi trở lên không cần thông tin phụ huynh
+                  </span>
+                )}
               </div>
               <div className="col-md-6">
                 <div className="form-group">
