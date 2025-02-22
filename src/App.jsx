@@ -13,10 +13,27 @@ function App() {
   const [errorPhone, setErrorPhone] = useState("");
   const [errorPhoneZalo, setErrorPhoneZalo] = useState("");
   const [showOtherInput, setShowOtherInput] = useState(false);
+  const [selectedTimes, setSelectedTimes] = useState([]);
+  const [errorTimeStudy, setErrorTimeStudy] = useState("");
 
-  // Hàm xử lý sự kiện thay đổi giá trị chọn
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+
+    if (checked) {
+      setSelectedTimes([...selectedTimes, value]); // Thêm vào danh sách
+    } else {
+      setSelectedTimes(selectedTimes.filter((time) => time !== value)); // Xóa khỏi danh sách
+    }
+  };
+
   const handleOtherChange = (event) => {
     setShowOtherInput(event.target.checked);
+
+    if (!event.target.checked) {
+      setSelectedTimes(selectedTimes.filter((time) => time !== "Other"));
+    } else {
+      setSelectedTimes([...selectedTimes, "Other"]);
+    }
   };
 
   useEffect(() => {
@@ -30,6 +47,9 @@ function App() {
   }, [phone]);
 
   useEffect(() => {
+    if (selectedTimes.length > 0) {
+      setErrorTimeStudy();
+    }
     if (phoneZalo.length === 10) {
       setErrorPhoneZalo();
     } else if (phoneZalo.length > 0) {
@@ -41,8 +61,9 @@ function App() {
 
   const handleBlur = () => {
     setIsFocused(date !== "");
-    if (date > "2025-12-31") {
-      setDate("2025-12-31"); // Reset về giá trị tối đa nếu nhập quá phạm vi
+    const today = new Date().toISOString().split("T")[0];
+    if (date > "2025-12-31" || date > today) {
+      setDate(today); // Reset về giá trị tối đa nếu nhập quá phạm vi
     }
   };
 
@@ -69,6 +90,10 @@ function App() {
   };
   const sendEmail = (e) => {
     e.preventDefault();
+    if (selectedTimes.length === 0) {
+      setErrorTimeStudy("Vui lòng chọn ít nhất một thời gian học.");
+      return;
+    }
     if (phone.length !== 10) {
       setErrorPhone("Số điện thoại không hợp lệ!");
       return;
@@ -1387,6 +1412,7 @@ function App() {
                         type="checkbox"
                         name="time_study"
                         id="other"
+                        value={"Other"}
                         onChange={handleOtherChange}
                       />
                       <span className="checkmark"></span> Khác
@@ -1399,6 +1425,9 @@ function App() {
                         placeholder="Nhập thời gian khác..."
                         name="time_study"
                       />
+                    )}
+                    {errorTimeStudy && (
+                      <p style={{ color: "red" }}>{errorTimeStudy}</p>
                     )}
                   </div>
                 </div>
