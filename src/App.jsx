@@ -1335,44 +1335,6 @@ function App() {
                   />
                 </div>
                 <div className="form-group">
-                  {/* <select
-                    name="time_study"
-                    id="time_study"
-                    className="form-control"
-                    style={{ padding: "20px" }}
-                    required
-                    value={timeStudy}
-                    onChange={handleChangeTimeStudy}
-                  >
-                    <option value="">
-                      Bạn có thể học các lớp vào thời gian nào dưới đây?
-                    </option>
-                    <option value="Morning">Sáng</option>
-                    <option value="Afternoon">Chiều</option>
-                    <option value="Evening">Tối</option>
-                    <option value="Weekend">Cuối tuần</option>
-                    <option value="Morning & Weekend">Sáng & Cuối tuần</option>
-                    <option value="Afternoon & Weekend">
-                      Chiều & Cuối tuần
-                    </option>
-                    <option value="Evening & Weekend">Tối & Cuối tuần</option>
-                    <option value="Morning & Afternoon">Sáng & Chiều</option>
-                    <option value="Morning & Evening">Sáng & Tối</option>
-                    <option value="Afternoon & Evening">Chiều & Tối</option>
-                    <option value="Afternoon & Evening & Weekend">
-                      Chiều & Tối & Cuối tuần
-                    </option>
-                    <option value="Morning & Afternoon & Evening">
-                      Sáng & Chiều & Tối
-                    </option>
-                    <option value="Morning & Evening & Weekend">
-                      Sáng & Tối & Cuối tuần
-                    </option>
-                    <option value="Morning & Afternoon & Evening & Weekend">
-                      Sáng & Chiều & Tối & Cuối tuần
-                    </option>
-                    <option value="Other">Khác</option>
-                  </select> */}
                   <div className="checkbox-group">
                     <label htmlFor="">
                       Bạn có thể học các lớp vào thời gian nào dưới đây?
@@ -1383,6 +1345,7 @@ function App() {
                         value={"Morning"}
                         name="time_study"
                         id="morning"
+                        onChange={handleCheckboxChange}
                       />
                       <span className="checkmark"></span> Sáng
                     </label>
@@ -1393,6 +1356,7 @@ function App() {
                         value={"Afternoon"}
                         name="time_study"
                         id="afternoon"
+                        onChange={handleCheckboxChange}
                       />
                       <span className="checkmark"></span> Chiều
                     </label>
@@ -1403,6 +1367,7 @@ function App() {
                         name="time_study"
                         id="evening"
                         value={"Evening"}
+                        onChange={handleCheckboxChange}
                       />
                       <span className="checkmark"></span> Tối
                     </label>
@@ -1424,6 +1389,7 @@ function App() {
                         className="form-control"
                         placeholder="Nhập thời gian khác..."
                         name="time_study"
+                        required
                       />
                     )}
                     {errorTimeStudy && (
